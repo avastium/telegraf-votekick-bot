@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "telegraf": "^4.8.2"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
