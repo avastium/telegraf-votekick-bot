@@ -8,7 +8,7 @@ const vanillaKeyboard = {inline_keyboard: [[{text: '🔫 Kick', callback_data: '
 let tmp = {activeVoting: false}
 
 bot.command('help', (ctx) => {
-  if (ctx.chat.id == groupID) ctx.replyWithHTML('<b>/help</b> - information\n\n<b>/kick [reason]</b> - when replying to someone\'s message, causes a vote for the kick of the author of the message\nVoting lasts 15 minutes\nFor a kick you need more "Kicks" than "Saves"');
+  if (ctx.chat.id == groupID) ctx.replyWithHTML('<b>/help</b> - information\n\n<b>/kick [reason]</b> - when replying to someone\'s message, causes a vote for the kick of the author of the message\nVoting lasts 10 minutes\nFor a kick you need more "Kicks" than "Saves"');
 });
 
 bot.on('message', (ctx) => {
@@ -36,7 +36,7 @@ bot.on('message', (ctx) => {
         ctx.banChatMember(tmp.kickId).catch(e => console.log(e));
       }
       tmp.activeVoting = false;
-    }, 60000);
+    }, 600000);
   }
 });
 
